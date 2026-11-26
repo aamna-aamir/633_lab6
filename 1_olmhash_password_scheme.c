@@ -306,7 +306,7 @@ int main(void) {
         printf("\nNew user detected.\n");
 
         // keep asking until a valid password is entered
-        while (true) {
+        while (1) {
             if (!read_input("Enter a new password: ",password, sizeof(password))) {
                 return 1;
             }
@@ -351,7 +351,7 @@ int main(void) {
                 printf("\nPassword has been verified.\n");
 
                 // ask for new password
-                while (true) {
+                while (1) {
                     if (!read_input("Enter your new password: ", password, sizeof(password))) {
                         return 1;
                     }
