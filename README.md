@@ -2,9 +2,7 @@
 # CPS633 Lab 6
 
 ---
-==================================================
 # 1. OLMHash Password Scheme
-==================================================
 
 This program implements a password management system using the OLMHash hashing algorithm.
 
@@ -29,18 +27,15 @@ gcc -Wall -Wextra -std=c11 olmhash.c -o olmhash
 
 The program creates `table.txt` automatically if it does not already exist.
 
-==================================================
+---
 
 # Part 2: Challenge Response Authentication
-==================================================
 
 
-==================================================
+---
 # Part 3: Password Cracker
-==================================================
 
 
-==================================================
+---
 # Part 4: Real Life Password Cracker
-==================================================
 
