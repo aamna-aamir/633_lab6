@@ -257,8 +257,7 @@ static int server_verify(const char *id, uint32_t r, const unsigned char respons
     return memcmp(expected, response, HASH_LEN) == 0;
 }
 
-/* ---------------- Test helper: add an entry to the table ----------------
- * Lets you try the protocol before your Part 1 program is finished. */
+/* ---------------- ENROLL NEW USERS ----------------*/
 static void enroll(void)
 {
     char id[128], pw[128];

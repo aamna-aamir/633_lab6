@@ -30,6 +30,35 @@ The program creates `table.txt` automatically if it does not already exist.
 
 # Part 2: Challenge Response Authentication
 
+This program enhances the OLMHash password management scheme, through the addition of a challenge, r.
+
+### Features
+- Allows users to register a new user ID and password.
+- Generates new challenge, r, for each login attempt
+- Verifies existing users using their stored password hash and challenge.
+- Stores user IDs and their 96-bit password hashes in `table.txt`.
+
+### Password Requirements
+- User IDs must be between 4 and 31 characters.
+- Passwords can contain uppercase letters, lowercase letters, and numbers (no special chars).
+- Passwords are converted to uppercase, padded with null bytes or truncated to 12 bytes, and hashed using the provided `E()` function.
+
+### Compile and Run
+
+#### Enroll New Users
+```bash
+gcc 2_challenge_response_auth.c -o challenge_response
+./challenge_response enroll
+```
+
+#### Validate Exiting Users
+```bash
+gcc 2_challenge_response_auth.c -o challenge_response
+./challenge_response
+```
+
+The program creates `table.txt` automatically if it does not already exist.
+
 
 
 # Part 3: Password Cracker
