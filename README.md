@@ -62,8 +62,21 @@ The program creates `table.txt` automatically if it does not already exist.
 
 
 # Part 3: Password Cracker
+This program cracks short passwords using a dictionary attack. We made a table of every possible four uppercase letter password and its hash, then given a hash, we can look it up in the table and return the password that made it.
 
+### Features
+- Makes tables of every possible four uppercase letter password (`AAAA` to `ZZZZ`) and its hash.
+- Given a hash, search the table and returns the password that made it.
+- Password is 4 letters, uppercase only (26 × 26 × 26 × 26 = 456,976 possibilities).
 
+### Compile and Run
+
+```bash
+gcc 3_password_cracker.c -o password_cracker
+./password_cracker
+```
+
+It builds the tables and asks you to enter a hash. Paste a 24 hex character hash and it prints the password.
 
 # Part 4: Real Life Password Cracker
 
