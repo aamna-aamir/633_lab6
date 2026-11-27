@@ -67,3 +67,19 @@ The program creates `table.txt` automatically if it does not already exist.
 
 # Part 4: Real Life Password Cracker
 
+Uses Ophcrack, a real password cracking tool (not something we wrote), to crack LM hash passwords with a free rainbow table.
+
+### Files
+- `Dockerfile` - builds an Ubuntu container with `ophcrack-cli` installed and a free LM-hash rainbow table unzipped inside it.
+- `lmhash.py` - computes the real LM hash for a given password (upper-case, pad to 14 bytes, split into two 7-byte halves, DES-encrypt a fixed string with each half).
+- `pwdump.txt` - the 4 test password hashes fed into Ophcrack, in standard pwdump format (`username:uid:LMHASH:NTHASH:::`).
+
+### Compile and Run
+
+```bash
+docker build -t ophcrack .
+docker run --rm -it ophcrack bash -c "ophcrack-cli -t /tables/<table_dir> -f pwdump.txt"
+```
+
+Ophcrack has no native macOS build, so it's run inside Docker. You'll need a free Ophcrack rainbow table (e.g. `tables_xp_free_fast.zip`) placed in this folder before building, since the table itself isn't included here due to size.
+
